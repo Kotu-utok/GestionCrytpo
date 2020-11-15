@@ -1,0 +1,33 @@
+﻿@model List<CryptoCurrencyModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+<div class="text-center">
+    <h1 class="display-4">Welcome to the CryptoCurrency listing App</h1>
+    <h1 class="display-4"></h1>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Allias</th>
+            <th scope="col">Price (Usd)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (CryptoCurrencyModel crypto in Model)
+        {
+            <tr>
+                <td>@crypto.CyptoName</td>
+                <td>@crypto.CyptoAllias</td>
+                <td>@crypto.CryptoPriceUsd</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
