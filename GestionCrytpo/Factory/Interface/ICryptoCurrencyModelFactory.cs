@@ -8,6 +8,6 @@ namespace GestionCrytpo.Factory.Interface
 {
     public interface ICryptoCurrencyModelFactory
     {
-        CryptoCurrencyModel CreateCryptoCurrencyModelObject(Task<string> objectReturnedFromApi);
+        CryptoCurrencyModel CreateCryptoCurrencyModelObject(string objectReturnedFromApi);
     }
 }

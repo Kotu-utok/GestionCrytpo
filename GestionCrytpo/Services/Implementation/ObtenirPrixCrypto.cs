@@ -1,4 +1,5 @@
 ﻿using GestionCrytpo.Services.Interface;
+using GestionCrytpo.Shared.Classes;
 using Microsoft.AspNetCore.Components;
 using Newtonsoft.Json;
 using System;
@@ -20,11 +21,11 @@ namespace GestionCrytpo.Services.Implementation
 
         public async Task<string> GetPrixCryptos()
         {
-                var response = HttpClient.GetAsync("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd").Result;
+            var response = HttpClient.GetAsync("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd").Result;
             
-                string apiResponse = response.Content.ReadAsStringAsync().Result;
-            var yourObject = JsonConvert.DeserializeObject<object>(apiResponse);
-            return apiResponse;
+            string apiResponse = response.Content.ReadAsStringAsync().Result;
+            Crypto bitcoinRetourner = JsonConvert.DeserializeObject<Crypto>(apiResponse);
+            return bitcoinRetourner.bitcoin.usd.ToString();
         }
     }
 }

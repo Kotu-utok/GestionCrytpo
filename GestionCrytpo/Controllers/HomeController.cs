@@ -28,7 +28,7 @@ namespace GestionCrytpo.Controllers
         public IActionResult Index()
         {
             Task<string> prixCrypto = _obtenirPrixCrypto.GetPrixCryptos();
-            CryptoCurrencyModel crytpoModel = _cryptoCurrencyModelFactory.CreateCryptoCurrencyModelObject(prixCrypto);
+            CryptoCurrencyModel crytpoModel = _cryptoCurrencyModelFactory.CreateCryptoCurrencyModelObject(prixCrypto.Result);
             cryptoCurrencyModels.Add(crytpoModel);
             return View(crytpoModel);
         }

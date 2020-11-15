@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace GestionCrytpo.Shared.Classes
 {
-    public class Bitcoin
+    public class Crypto
     {
-        public float usd { get; set; }
+        public Bitcoin bitcoin { get; set;}
     }
 }

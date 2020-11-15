@@ -10,9 +10,8 @@ namespace GestionCrytpo.Factory
 {
     public class CryptoCurrencyModelFactory: ICryptoCurrencyModelFactory
     {
-        public CryptoCurrencyModel CreateCryptoCurrencyModelObject(Task<string> objectReturnedFromApi) 
+        public CryptoCurrencyModel CreateCryptoCurrencyModelObject(string objectReturnedFromApi) 
         {
-
             throw new NotImplementedException();
         }
     }
